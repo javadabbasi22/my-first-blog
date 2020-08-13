@@ -12,23 +12,14 @@
     </head>
     <body >
     <div class="container text-right">
-        <div>
-            <h1 class="pb-5 pt-4 bg-warning mb-4 text-center"><a  href="/">اولین سایت با جنگو</a></h1>
-        </div>
-        
-        <div class="post">
-            {% if post.published_date %}
-                <div >
-                    {{ post.published_date }}
-                </div>
-            {% endif %}
-            {% if user.is_authenticated %}
-            <a class="btn btn-info" href="{% url 'post_edit' pk=post.pk %}">ویرایش</a>
-            {% endif %}
-            <h2>{{ post.title }}</h2>
-            <p>{{ post.text|linebreaksbr }}</p>
-        </div>
+     
+        <h2>New post</h2>
+        <form method="POST" class="post-form">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-default">Save</button>
+        </form>
     </div>
-
+    
+  
     </body>
 </html>
