@@ -1,18 +1,96 @@
+{% load static %}
 <html>
     <head>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+
         <title>اولین سایت با جنگو</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">       
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" href="{% static 'css/timan.css' %}">
+        <link rel="stylesheet" href="{% static 'css/header.css' %}">
     </head>
-    <body>
+    <body >
+    <div class="container text-right">
         <div>
-            <h1><a href="/">اولین سایت با جنگو</a></h1>
+            <h1 class="pb-5 pt-4 bg-warning mb-4 text-center"><a  href="/">اولین سایت با جنگو</a></h1>
         </div>
         
         {% for post in posts %}
             <div>
-                <p>published: {{ post.published_date }}</p>
-                <h2><a href="">{{ post.title }}</a></h2>
+                <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
                 <p>{{ post.text|linebreaksbr }}</p>
+                <p class="font">published: {{ post.published_date }}</p>
             </div>
         {% endfor %}
+    </div>
+    <div class="container-fluid m-0 p-0">
+        <header id="header-main">
+            <div class="col-md-8 col-sm-10 px-0 col-11 mx-auto">
+                <h1 class="logo">
+                    <a href="http://timan.ir" target="_blank" class="d-black">
+                        <img src="png/timan-logo.png" alt="timan-logo" /></a>
+                </h1>
+
+                <div id="menu-icon">
+                    <span class="icon-menu-hamburguer"></span>
+                </div>
+
+                <nav id="menu-main">
+                    <ul class="fontnormal text-white lineHeight-1 fontsize-3">
+                        <li class="px-md-4">
+                            <a href="#"> <i class="fas fa-home"></i> خانه </a>
+                        </li>
+                        <li class="d-block d-md-none">
+                            <a href="#"> ورود</a>
+                        </li>
+                        <li class="d-block d-md-none">
+                            <a href="#"> ثبت‌نام</a>
+                        </li>
+                        <li class="pl-md-4">
+                            <a href="#">در‌باره ما</a>
+                        </li>
+                        <li class="pl-md-4">
+                            <a href="#">پروفایل شما</a>
+                        </li>
+                        <li class="pl-md-4">
+                            <a href="#">خبر‌نامه</a>
+                        </li>
+                        <li class="pl-md-0 pb-4">
+                            <a href="#">تماس با ما</a>
+                        </li>
+                        <li class="float-left d-none d-md-block" style="padding-top: 1px;">
+                            <a href="#">ثبت‌نام</a>
+                        </li>
+                        <li class="float-left px-1 d-none d-md-block">/</li>
+
+                        <li class="float-left d-none d-md-block">
+                            <a href="#"> <i class="fas fa-user p-0"></i> ورود </a>
+                        </li>
+                        <li class="float-left p-0 d-none">
+                            <a href="#">
+                                <img width="50px" height="50px" class="rounded-circle mt-n4" src="opt/adamak1.png" alt="my-image" /></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="row m-0 p-0 bgcolor-or position-absolute bg-menu"></div>
+        <div class="col-md-8 col-sm-10 col-11 mx-auto px-0">
+            <div class="row no-gutters w-100">
+                <div class="card mb-5 mt-1 w-100 border-0 bgcolor-fd boxShadow-1 px-0 rounded-lg text-right">
+
+                    <div class="card-body m-sm-5 my-4 lineHeight-3 ">
+                        <h5 class="card-title fontmedium fontsize-6  mb-4" style="color: #00b300;">لینک تغییر رمز عبور ارسال شد.
+                        </h5>
+                        <p class="card-text fontnormal fontsize-5 color-gr62">لینک تغییر رمز عبور برای حساب کاربری javadabbasi22@gmail.com به شماره موبایل شما ارسال شد لطفا بررسی نمائید.
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
     </body>
 </html>

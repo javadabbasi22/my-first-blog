@@ -1,0 +1,31 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+
+        <title>اولین سایت با جنگو</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">       
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" href="{% static 'css/timan.css' %}">
+        <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    </head>
+    <body >
+    <div class="container text-right">
+        <div>
+            <h1 class="pb-5 pt-4 bg-warning mb-4 text-center"><a  href="/">اولین سایت با جنگو</a></h1>
+        </div>
+        
+        <div class="post">
+            {% if post.published_date %}
+                <div >
+                    {{ post.published_date }}
+                </div>
+            {% endif %}
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    </div>
+
+    </body>
+</html>

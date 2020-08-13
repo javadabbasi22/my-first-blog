@@ -1,0 +1,4 @@
+h1 a, h2 a { color: #ef5100; font-family: 'lobster'!important; }
+body { padding-left: 15px; }
+.font{color:green;font-family: 'lobster'!important;}
+a:hover{text-decoration:none}
